@@ -1,0 +1,27 @@
+.body {
+    background: black;
+}
+
+.game-window {
+    width: 618px;
+    height: 618px;
+    margin: auto;
+    border: solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.game__cell {
+    width: 200px;
+    height: 200px;
+    border: solid white; 
+}
+
+.game__cell-cross {
+    background: skyblue;
+}
+
+.game__cell-zero {
+    background: lightsalmon;
+}
