@@ -2,10 +2,20 @@
     background: black;
 }
 
+.user-win {
+    width: 500px;
+    height: 50px;
+    margin: 50px auto;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    color: white;
+}
+
 .game-window {
     width: 600px;
     height: 600px;
-    margin: 150px auto;
+    margin: 100px auto;
     background: white;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -20,10 +30,10 @@
     height: 100%;
 }
 
-.game__cell-cross {
+.cross {
     background: skyblue;
 }
 
-.game__cell-zero {
+.zero {
     background: lightsalmon;
 }
