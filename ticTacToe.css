@@ -20,6 +20,7 @@
     height: 600px;
     margin: 50px 0;
     background: gray;
+    border: solid gray;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -41,11 +42,11 @@
 }
 
 .cross {
-    background: url(./images/cross.jpg) no-repeat;
+    background: no-repeat url(./images/cross.jpg);
     background-size: cover;
 }
 
 .zero {
-    background: url(./images/zero.jpg) no-repeat;
+    background: no-repeat url(./images/zero.jpg);
     background-size: cover;
 }
