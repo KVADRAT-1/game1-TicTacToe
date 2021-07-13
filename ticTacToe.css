@@ -41,9 +41,11 @@
 }
 
 .cross {
-    background: skyblue;
+    background: url(./images/cross.jpg) no-repeat;
+    background-size: cover;
 }
 
 .zero {
-    background: lightsalmon;
+    background: url(./images/zero.jpg) no-repeat;
+    background-size: cover;
 }
