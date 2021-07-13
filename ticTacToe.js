@@ -26,7 +26,7 @@ function victoryCheck(whoseMove) {
 }
 
 function addSign(e) {
-    if (e.target.className == 'game__cell' && !win) {
+    if (e.target.textContent == '' && !win) {
     cells[e.target.id].cell = `${playerChange()}`;
     if (playerChange() === 'cross') {
         e.target.textContent = 'x';
