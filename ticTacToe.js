@@ -1,8 +1,11 @@
 const body = document.querySelector('.body');
 const userWin = body.querySelector('.user-win');
 const gameWindow = body.querySelector('.game-window');
+const gameCellAll = body.querySelectorAll('.game__cell');
+const resetButton = body.querySelector('.reset-button');
 let cells = [{cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}];
 let playerTurn = true;
+let win = false
 
 function playerChange () {
     if (playerTurn) {
@@ -18,12 +21,13 @@ function victoryCheck(e) {
     victoryConditions.forEach((item) => {
         if (cells[item[0]].cell === `${whoseСell}` && cells[item[1]].cell === `${whoseСell}` && cells[item[2]].cell === `${whoseСell}`) {
             userWin.textContent = `${whoseСell} win`;
+            win = !win;
         }
     })
 }
 
 function addSign(e) {
-    if (e.target.className == 'game__cell') {
+    if (e.target.className == 'game__cell' && !win) {
     cells[e.target.id].cell = `${playerChange()}`;
     playerTurn = !playerTurn;
     e.target.classList.add(`${cells[e.target.id].cell}`)
@@ -31,25 +35,17 @@ function addSign(e) {
     }
 }
 
-gameWindow.addEventListener('click', addSign);
+function reset() {
+    cells.forEach((item) => { item.cell = false });
+    userWin.textContent = '';
+    playerTurn = true;
+    win = false;
+    gameCellAll.forEach((item) => {
+        if (item.classList[1]) {
+            item.classList.remove(item.classList[1])
+        }
+    })
+}
 
-// function addSign(e) {
-//     if (e.target.className !== 'game__cell' && e.target.className == 'game-window') {
-//         return
-//     }
-//     console.log(`${e.target.classList[1]}`)
-//     if (playerTurn === 'cross') {
-//         playerTurn = 'zero';
-//         e.target.classList.add('cross')
-//         cells[e.target.id].cell = 'cross';
-//         check(e)
-//         return
-//     }
-//     if (playerTurn === 'zero') {
-//         playerTurn = 'cross';
-//         e.target.classList.add('zero')
-//         cells[e.target.id].cell = 'zero';
-//         check(e)
-//         return
-//     }
-// }
+gameWindow.addEventListener('click', addSign);
+resetButton.addEventListener('click', reset);
