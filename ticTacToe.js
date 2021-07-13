@@ -21,7 +21,7 @@ function victoryCheck(e) {
     victoryConditions.forEach((item) => {
         if (cells[item[0]].cell === `${whoseСell}` && cells[item[1]].cell === `${whoseСell}` && cells[item[2]].cell === `${whoseСell}`) {
             userWin.textContent = `${whoseСell} win`;
-            win = !win;
+            win = true;
         }
     })
 }
