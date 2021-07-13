@@ -1,8 +1,8 @@
 const body = document.querySelector('.body');
-const userWin = body.querySelector('.user-win');
-const gameWindow = body.querySelector('.game-window');
+const userWin = body.querySelector('.game__user-win');
+const gameWindow = body.querySelector('.game__window');
 const gameCellAll = body.querySelectorAll('.game__cell');
-const resetButton = body.querySelector('.reset-button');
+const resetButton = body.querySelector('.game__reset-button');
 let cells = [{cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}, {cell: false}];
 let playerTurn = true;
 let win = false
