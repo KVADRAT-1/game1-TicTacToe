@@ -8,7 +8,8 @@
 }
 
 .game {
-    min-width: 250px;
+    min-width: 500px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,7 +18,6 @@
 .game__user-win {
     width: 250px;
     height: 50px;
-    margin-top: 50px;
     text-align: center;
     font-size: 50px;
     color: gray;
@@ -27,8 +27,6 @@
     width: 500px;
     height: 500px;
     margin: 50px 0;
-    background: gray;
-    border: solid gray;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -37,7 +35,7 @@
 }
 
 .game__cell {
-    background: black;
+    border: solid grey 1px;
     width: 100%;
     height: 100%;
 }
