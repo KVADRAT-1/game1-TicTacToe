@@ -15,12 +15,11 @@ function playerChange () {
     }
 }
 
-function victoryCheck(e) {
-    const whoseСell = e.target.classList[1]
+function victoryCheck(whoseMove) {
     const victoryConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
     victoryConditions.forEach((item) => {
-        if (cells[item[0]].cell === `${whoseСell}` && cells[item[1]].cell === `${whoseСell}` && cells[item[2]].cell === `${whoseСell}`) {
-            userWin.textContent = `${whoseСell} win`;
+        if (cells[item[0]].cell === `${whoseMove}` && cells[item[1]].cell === `${whoseMove}` && cells[item[2]].cell === `${whoseMove}`) {
+            userWin.textContent = `${whoseMove} win`;
             win = true;
         }
     })
@@ -29,10 +28,14 @@ function victoryCheck(e) {
 function addSign(e) {
     if (e.target.className == 'game__cell' && !win) {
     cells[e.target.id].cell = `${playerChange()}`;
-    playerTurn = !playerTurn;
-    e.target.classList.add(`${cells[e.target.id].cell}`)
-    victoryCheck(e)
+    if (playerChange() === 'cross') {
+        e.target.textContent = 'x';
+    } else {
+        e.target.textContent = 'o';
     }
+    victoryCheck(playerChange())
+    }
+    playerTurn = !playerTurn;
 }
 
 function reset() {
@@ -41,8 +44,8 @@ function reset() {
     playerTurn = true;
     win = false;
     gameCellAll.forEach((item) => {
-        if (item.classList[1]) {
-            item.classList.remove(item.classList[1])
+        if (item.textContent) {
+            item.textContent = '';
         }
     })
 }
