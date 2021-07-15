@@ -16,7 +16,7 @@ function playerChange () {
 }
 
 function victoryCheck(whoseMove) {
-    const victoryConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
+    const victoryConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
     victoryConditions.forEach((item) => {
         if (cells[item[0]].cell === `${whoseMove}` && cells[item[1]].cell === `${whoseMove}` && cells[item[2]].cell === `${whoseMove}`) {
             userWin.textContent = `${whoseMove} win`;
