@@ -9,9 +9,9 @@ let win = false
 
 function playerChange () {
     if (playerTurn) {
-        return 'cross';
+        return 'CROSS';
     } else {
-        return 'zero';
+        return 'ZERO';
     }
 }
 
@@ -19,7 +19,7 @@ function victoryCheck(whoseMove) {
     const victoryConditions = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3, 6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]];
     victoryConditions.forEach((item) => {
         if (cells[item[0]].cell === `${whoseMove}` && cells[item[1]].cell === `${whoseMove}` && cells[item[2]].cell === `${whoseMove}`) {
-            userWin.textContent = `${whoseMove} win`;
+            userWin.textContent = `${whoseMove} WIN`;
             win = true;
         }
     })
@@ -28,7 +28,7 @@ function victoryCheck(whoseMove) {
 function addSign(e) {
     if (e.target.textContent == '' && !win) {
     cells[e.target.id].cell = `${playerChange()}`;
-    if (playerChange() === 'cross') {
+    if (playerChange() === 'CROSS') {
         e.target.textContent = 'x';
     } else {
         e.target.textContent = 'o';
