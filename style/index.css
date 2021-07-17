@@ -1,0 +1,8 @@
+@import url(../blocks/body/body.css);
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__clear-fiear-button/header__clear-fiear-button.css);
+@import url(../blocks/header/__score/header__score.css);
+@import url(../blocks/header/__clear-score-button/header__clear-score-button.css);
+@import url(../blocks/game/game.css);
+@import url(../blocks/game/__cell/game__cell.css);
