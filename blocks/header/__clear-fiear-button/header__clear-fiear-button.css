@@ -1,3 +1,9 @@
 .header__clear-fiear-button {
     font-size: 20px;
 }
+
+@media (max-width: 500px) {
+    .header__clear-fiear-button {
+        font-size: 15px;
+    }
+}

@@ -6,3 +6,19 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
 }
+
+@media (max-width: 768px) {
+    .game {
+        width: 400px;
+        height: 400px;
+        margin: 25px 0;
+    }
+}
+
+@media (max-width: 500px) {
+    .game {
+        width: 300px;
+        height: 300px;
+        margin: 25px 0;
+    }
+}

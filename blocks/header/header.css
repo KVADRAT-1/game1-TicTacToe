@@ -5,3 +5,15 @@
     grid-template-columns: repeat(3, 1fr);
     color: rgb(255, 255, 255);
 }
+
+@media (max-width: 768px) {
+    .header {
+        width: 400px;
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        width: 300px;
+    }
+}
